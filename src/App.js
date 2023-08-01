@@ -1,10 +1,20 @@
-import './App.css';
+import "./App.css";
+import { HashRouter, Routes, Route } from "react-router-dom";
+import NavigationBar from "./Components/NavigatonBar";
+import Home from "./Components/Home";
+import About from "./Components/About";
 
 function App() {
   return (
-    <div className="App">
-      <h1>This is iNotebook</h1>
-    </div>
+    <>
+      <HashRouter>
+        <NavigationBar />
+        <Routes>
+          <Route exact path="/" element={<Home />}></Route>
+          <Route exact path="/about" element={<About />}></Route>
+        </Routes>
+      </HashRouter>
+    </>
   );
 }
 
