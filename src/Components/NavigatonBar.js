@@ -1,6 +1,7 @@
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { LinkContainer } from "react-router-bootstrap";
+
 function NavigationBar() {
   return (
     <Navbar expand="lg" className="bg-dark" data-bs-theme="dark">
