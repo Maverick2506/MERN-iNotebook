@@ -11,9 +11,11 @@ const NoteItem = (props) => {
           <Card.Title>{note.title}</Card.Title>
           <Card.Text>{note.content}</Card.Text>
           <Button variant="primary" className="mx-2">
-            Edit
+            <i className="fa-solid fa-pen"></i> Edit
           </Button>
-          <Button variant="danger">Delete</Button>
+          <Button variant="danger">
+            <i className="fa-solid fa-trash-can"></i> Delete
+          </Button>
         </Card.Body>
       </Card>
     </div>
