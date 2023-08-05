@@ -3,7 +3,6 @@ import noteContext from "../Context/notes/noteContext";
 
 const AddNote = () => {
   const context = useContext(noteContext);
-  // eslint-disable-next-line
   const { addNote } = context;
 
   const [note, setNote] = useState({ title: "", content: "", tag: "" });
@@ -31,6 +30,8 @@ const AddNote = () => {
             id="title"
             name="title"
             onChange={onChange}
+            minLength={3}
+            required
           />
         </div>
         <div className="mb-3">
@@ -43,6 +44,8 @@ const AddNote = () => {
             id="content"
             name="content"
             onChange={onChange}
+            minLength={5}
+            required
           />
         </div>
         <div className="mb-3">
@@ -57,18 +60,13 @@ const AddNote = () => {
             onChange={onChange}
           />
         </div>
-        <div className="mb-3 form-check">
-          <input
-            type="checkbox"
-            className="form-check-input"
-            id="exampleCheck1"
-          />
-          <label className="form-check-label" htmlFor="exampleCheck1">
-            Check me out
-          </label>
-        </div>
-        <button type="submit" className="btn btn-primary" onClick={handleClick}>
-          Submit
+        <button
+          disabled={note.title.length < 3 || note.content.length < 5}
+          type="submit"
+          className="btn btn-primary"
+          onClick={handleClick}
+        >
+          Add the Note
         </button>
       </form>
     </div>
